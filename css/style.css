@@ -116,10 +116,10 @@ body{
 }
 @keyframes rotation {
 	0% {
-		rotate: X 0deg;
+		transform: rotateX(0deg);
 	}
 	100% {
-		rotate: X 360deg;
+		transform: rotateX(360deg);
 	}
 }
 
