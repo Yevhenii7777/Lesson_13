@@ -116,22 +116,10 @@ body{
 }
 @keyframes rotation {
 	0% {
-		rotate: x 0deg;
-	}
-	20% {
-		rotate: x 72deg;
-	}
-	40% {
-		rotate: x 144deg;
-	}
-	60% {
-		rotate: x 216deg;
-	}
-	80% {
-		rotate: x 288deg;
+		rotate: X 0deg;
 	}
 	100% {
-		rotate: x 360deg;
+		rotate: X 360deg;
 	}
 }
 
