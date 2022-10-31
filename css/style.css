@@ -61,7 +61,6 @@ body{
 .sub-menu__item:hover {
 	padding-left: 5px;
 	transition: all 0.5s ease 0s;
-	/* transform: rotate(7200deg); */
 }
 .sub-menu__item:not(:last-child) {
 	margin-bottom: 10px;
@@ -101,6 +100,41 @@ body{
 	left: -30px;
 	z-index: 26;
 }
+.items__test--bg-gray {
+	/* animation: name duration timing-function delay iteration-count direction fill-mode; */
+	animation: appearing 2s linear, rotation 5s linear infinite 2s;
+}
+@keyframes appearing {
+	0% {
+		transform: translate(0px, 50%);
+		opacity: 0;
+	}
+	100% {
+		transform: translate(0px,0%);
+		opacity: 1;
+	}
+}
+@keyframes rotation {
+	0% {
+		rotate: x 0deg;
+	}
+	20% {
+		rotate: x 72deg;
+	}
+	40% {
+		rotate: x 144deg;
+	}
+	60% {
+		rotate: x 216deg;
+	}
+	80% {
+		rotate: x 288deg;
+	}
+	100% {
+		rotate: x 360deg;
+	}
+}
+
 .items__test--bg-green {
 	background: green;
 	position: relative;
@@ -142,8 +176,8 @@ body{
 
 .car__container{
 	position: absolute;
-	top: 1100px;
-	left: 600px;
+	top: 1200px;
+	left: 1000px;
 	}
 
 	.cabin__box {
@@ -184,9 +218,15 @@ body{
 	transform: rotate(180deg);
 }
 #car__container:target {
-	transition: all 2s ease 0.1s;
+	transition: transform 2s ease-out 0s, left 4s ease 1s;
 	transform: skew(-10deg, 0deg);
+	left: -900px;
 }
+#car__container:target .disc{
+	transition: all 5s linear 0.5s;
+	transform: rotate(-7200deg);
+}
+
 
 #road:target {
 	transition: all 2s ease 0.1s;
@@ -215,42 +255,6 @@ transform: translate3d(30px, 30px, 30px);
 
 #back-light:target{
 	transform: scale3d(1.5, 1.5, 1.5);
-}
-
-.training-transform {
-	position: relative;
-	top: -300px;
-}
-.training-transform__item {
-	width: 150px;
-	height: 150px;
-	background-color: rgba(24, 181, 165, 0.2);
-	perspective: 400px;
-	display: inline-block;
-	margin-right: 15px;
-}
-.training-transform__item--rotate3d,
-.training-transform__item--transform-style,
-.training-transform__item--backface-visibility {
-	background-color: #18b5a4;
-	width: 100%;
-	height: 100%;
-}
-
-.training-transform__item--rotate3d:hover {
-	transition: all 2s ease 0.1s;
-	transform: rotate3d(1, 1, 1, 45deg);
-
-}
-.training-transform__item--transform-style:hover {
-	transition: all 2s ease 0.1s;
-	transform: rotateY(30deg);
-
-}
-.training-transform__item--backface-visibility:hover {
-	transition: all 2s ease 0.1s;
-	transform: rotateY(150deg);
-	backface-visibility: visible;
 }
 
 .box__glass1 {
@@ -450,6 +454,49 @@ transform: translate3d(30px, 30px, 30px);
 	transform: rotate(-7200deg);
 }
 
+.training-transform {
+	position: relative;
+	top: -300px;
+}
+.training-transform__item {
+	width: 150px;
+	height: 150px;
+	background-color: rgba(24, 181, 165, 0.2);
+	perspective: 400px;
+	display: inline-block;
+	margin-right: 15px;
+}
+.training-transform__item--rotate3d,
+.training-transform__item--transform-style,
+.training-transform__item--backface-visibility {
+	background-color: #18b5a4;
+	width: 100%;
+	height: 100%;
+}
+.training-transform__item--rotate3d{
+	opacity: 0;
+}
+
+.training-transform__item--rotate3d:hover {
+	transition: opacity 3s linear 1s, transform 1s ease 4s, background-color 2s ease 5s, width 1s linear 7s, height 1s ease 8s;
+	opacity: 1;
+	width: 250px;
+	height: 250px;
+	background-color: #291a067c;
+	transform: rotate3d(1, 1, 1, 45deg);
+
+}
+.training-transform__item--transform-style:hover {
+
+	transition: all 2s ease 0.1s;
+	transform: rotateY(30deg);
+
+}
+.training-transform__item--backface-visibility:hover {
+	transition: all 2s ease 0.1s;
+	transform: rotateY(150deg);
+	backface-visibility: visible;
+}
 
 
 
