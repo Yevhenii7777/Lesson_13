@@ -449,11 +449,16 @@ transform: translate3d(30px, 30px, 30px);
 .training-transform__item {
 	width: 150px;
 	height: 150px;
-	background-color: rgba(24, 181, 165, 0.2);
+	background-color: rgba(24, 181, 165, 0.336);
 	perspective: 400px;
 	display: inline-block;
 	margin-right: 15px;
 }
+.training-transform div:nth-child(2){
+	perspective: 300px;
+	transform-style: preserve-3d;
+}
+
 .training-transform__item--rotate3d,
 .training-transform__item--transform-style,
 .training-transform__item--backface-visibility {
@@ -475,10 +480,9 @@ transform: translate3d(30px, 30px, 30px);
 
 }
 .training-transform__item--transform-style:hover {
-
+	background-color: red;
 	transition: all 2s ease 0.1s;
-	transform: rotateY(30deg);
-
+	transform: rotateY(45deg);
 }
 .training-transform__item--backface-visibility:hover {
 	transition: all 2s ease 0.1s;
